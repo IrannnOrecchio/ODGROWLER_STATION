@@ -1,0 +1,520 @@
+/* Importação de fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Oswald:wght@400;600&display=swap');
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Container de conteúdo */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header e Navegação */
+header {
+    background-color: #000000; /* Preto puro */
+    color: #fff;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+}
+
+nav .logo img {
+    height: 70px; /* Ajuste o tamanho da logo conforme necessário */
+    margin-right: 10px;
+}
+
+nav .logo h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex; /* Mantenha flex para desktop por padrão */
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f39c12; /* Laranja vibrante */
+}
+
+/* Menu Toggle (para mobile) */
+.menu-toggle {
+    display: none; /* Escondido por padrão em desktop */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    height: 3px;
+    width: 25px;
+    background-color: #fff;
+    margin-bottom: 4px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hero Section */
+.hero {
+    background: url('../img/hero-bg.jpg') no-repeat center center/cover; /* Adicione uma imagem de fundo para a seção hero */
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    height: 70vh; /* Altura da tela */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero::before { /* Overlay para melhorar a legibilidade do texto */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.hero p {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background-color: #f39c12; /* Laranja vibrante */
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #e67e22; /* Laranja mais escuro */
+    transform: translateY(-2px);
+}
+
+/* Seções Gerais */
+.section-padded {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-padded h2 {
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    color: #2c3e50;
+    position: relative;
+}
+
+.section-padded h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #f39c12;
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.bg-light {
+    background-color: #f9f9f9;
+}
+
+/* Grids (Cervejas e Comidas) */
+.beer-grid, .food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.beer-item, .food-item {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.beer-item:hover, .food-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.beer-item h3, .food-item h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.beer-item p, .food-item p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.beer-item span {
+    display: inline-block;
+    background-color: #eee;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin: 0 5px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #666;
+}
+
+/* Seção Sobre Nós */
+#about p {
+    text-align: center;
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    line-height: 1.8;
+}
+
+.info-details {
+    background-color: #e8f6f3; /* Um verde água claro */
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 700px;
+    margin: 40px auto 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.info-details h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.info-details ul {
+    list-style: none;
+    margin-bottom: 20px;
+    padding-left: 0;
+}
+
+.info-details ul li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+    color: #444;
+}
+
+.info-details ul li::before {
+    content: '✓';
+    color: #27ae60; /* Verde de sucesso */
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.info-details p {
+    font-style: italic;
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Galeria de Vídeos */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.video-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden; /* Garante que o iframe não saia da borda */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.video-item iframe {
+    width: 100%;
+    height: 200px; /* Altura padrão para os vídeos */
+    display: block;
+    border-radius: 8px 8px 0 0;
+}
+
+.video-item p {
+    padding: 15px;
+    font-size: 1rem;
+    color: #555;
+    text-align: center;
+}
+
+.gallery-note {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1.1rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* Contato e Horário */
+.contact-info {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.hours-table {
+    margin: 30px auto;
+    width: 100%;
+    max-width: 500px;
+    border-collapse: collapse;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.hours-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.hours-table th, .hours-table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.hours-table thead th {
+    background-color: #333; /* Cinza escuro para o cabeçalho da tabela */
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+}
+
+.hours-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.hours-table tbody tr:hover {
+    background-color: #e0e0e0;
+}
+
+.map-container {
+    margin-top: 40px;
+    height: 450px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Footer */
+footer {
+    background-color: #000000; /* Preto puro */
+    color: #fff;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin-bottom: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    /* O menu ul deve ser 'none' por padrão em mobile e 'flex' quando 'active' */
+    nav ul {
+        display: none; /* Esconde a lista de navegação por padrão em mobile */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 90px; /* Ajuste conforme a altura do seu header */
+        left: 0;
+        background-color: #000000; /* Alterado para preto puro, como o header */
+        box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+    }
+
+    nav ul.active {
+        display: flex; /* Exibe a lista quando a classe 'active' é adicionada */
+    }
+
+    nav ul li {
+        margin: 0;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    nav ul li:last-child {
+        border-bottom: none;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 10px;
+    }
+
+    .menu-toggle {
+        display: flex; /* Exibe o botão hamburguer em mobile */
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .section-padded {
+        padding: 60px 15px;
+    }
+
+    .section-padded h2 {
+        font-size: 2.2rem;
+    }
+
+    .beer-grid, .food-grid, .video-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    }
+
+    .beer-item, .food-item, .video-item {
+        padding: 25px;
+    }
+
+    .video-item iframe {
+        height: 180px;
+    }
+
+    .contact-info p, .info-details ul li {
+        font-size: 1rem;
+    }
+
+    .hours-table th, .hours-table td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    nav .logo img {
+        height: 50px;
+    }
+
+    nav .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .section-padded h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Animação do ícone do menu hamburguer (adicionar no final do CSS) */
+.menu-toggle.open span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
